@@ -1,6 +1,6 @@
-import { ResponsiveModal } from "../../../../../components/responsive-dialog";
-import { UploadDropzone } from "../../../../../lib/uploadthing";
-import { trpc } from "../../../../../trpc/client";
+import { ResponsiveModal } from "@/components/responsive-dialog";
+import { UploadDropzone } from "@/lib/uploadthing";
+import { trpc } from "@/trpc/client";
 
 interface ThumbnailUploadModalProps {
   videoId: string;

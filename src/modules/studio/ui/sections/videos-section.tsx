@@ -14,11 +14,12 @@ import {
   TableRow,
 } from "../../../../components/ui/table";
 import { useRouter } from "next/navigation";
-import { VideoThumbnail } from "../../../videos/server/ui/components/video-thumbnail";
+
 import { snakeCaseToTitle } from "../../../../lib/utils";
 import { format } from "date-fns";
 import { Globe2Icon, LockIcon } from "lucide-react";
 import { Skeleton } from "../../../../components/ui/skeleton";
+import { VideoThumbnail } from "../../../videos/ui/components/video-thumbnail";
 
 export const VideosSection = () => {
   return (

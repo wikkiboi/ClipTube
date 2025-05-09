@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { formatDuration } from "../../../../../lib/utils";
-import { THUMBNAIL_FALLBACK } from "../../../types";
+import { formatDuration } from "@/lib/utils";
+import { THUMBNAIL_FALLBACK } from "../../types";
 
 interface VideoThumbnailProps {
   imageUrl?: string | null;

@@ -43,13 +43,15 @@ import { z } from "zod";
 import { videoUpdateSchema } from "../../../../db/schema";
 import { Textarea } from "../../../../components/ui/textarea";
 import { toast } from "sonner";
-import { VideoPlayer } from "../../../videos/server/ui/components/video-player";
+
 import Link from "next/link";
 import { snakeCaseToTitle } from "../../../../lib/utils";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { THUMBNAIL_FALLBACK } from "../../../videos/types";
-import { ThumbnailUploadModal } from "../../../videos/server/ui/components/thumbnail-upload-modal";
+import { ThumbnailUploadModal } from "../../../videos/ui/components/thumbnail-upload-modal";
+import { VideoPlayer } from "../../../videos/ui/components/video-player";
+
 interface FormSectionProps {
   videoId: string;
 }
