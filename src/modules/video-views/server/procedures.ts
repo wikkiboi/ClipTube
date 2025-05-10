@@ -1,8 +1,8 @@
 import { z } from "zod";
-import { createTRPCRouter, protectedProcedure } from "../../trpc/init";
+import { createTRPCRouter, protectedProcedure } from "../../../trpc/init";
 import { and, eq } from "drizzle-orm";
-import { videoViews } from "../../db/schema";
-import { db } from "../../db";
+import { videoViews } from "../../../db/schema";
+import { db } from "../../../db";
 
 export const videoViewsRouter = createTRPCRouter({
   create: protectedProcedure
@@ -21,6 +21,7 @@ export const videoViewsRouter = createTRPCRouter({
       if (existingVideoView) {
         return existingVideoView;
       }
+      //   Not throwing error here since trpc/react-query would attempt to refetch infinitely
 
       const [createdVideoView] = await db
         .insert(videoViews)
