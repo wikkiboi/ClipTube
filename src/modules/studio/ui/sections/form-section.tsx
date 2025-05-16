@@ -130,7 +130,7 @@ const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
 
   //   handleSubmit takes care of validation on the client-side before calling onSubmit
 
-  const fullUrl = `${APP_URL || "http://localhost:3000"}/videos/${videoId}`;
+  const fullUrl = `${APP_URL}/videos/${videoId}`;
   const [isCopied, setIsCopied] = useState(false);
 
   const onCopy = async () => {
