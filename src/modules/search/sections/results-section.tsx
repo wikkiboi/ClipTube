@@ -21,14 +21,16 @@ interface ResultsSectionProps {
 }
 
 export const ResultsSection = (props: ResultsSectionProps) => {
-  <Suspense
-    key={`${props.query}-${props.categoryId}`}
-    fallback={<ResultsSectionSkeleton />}
-  >
-    <ErrorBoundary fallback={<p>Error</p>}>
-      <ResultsSectionSuspense {...props} />
-    </ErrorBoundary>
-  </Suspense>;
+  return (
+    <Suspense
+      key={`${props.query}-${props.categoryId}`}
+      fallback={<ResultsSectionSkeleton />}
+    >
+      <ErrorBoundary fallback={<p>Error</p>}>
+        <ResultsSectionSuspense {...props} />
+      </ErrorBoundary>
+    </Suspense>
+  );
 };
 
 const ResultsSectionSkeleton = () => {

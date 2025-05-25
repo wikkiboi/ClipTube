@@ -4,7 +4,7 @@ import { UserGetOneOutput } from "../types";
 import { Button } from "../../../../components/ui/button";
 import Link from "next/link";
 import { SubscriptionButton } from "../../../subscriptions/ui/components/subscription-button";
-import { useSubscription } from "../../../subscriptions/ui/components/hooks/use-subscription";
+import { useSubscription } from "../../../subscriptions/hooks/use-subscription";
 import { cn } from "../../../../lib/utils";
 import { Skeleton } from "../../../../components/ui/skeleton";
 
@@ -75,7 +75,9 @@ export const UserPageInfo = ({ user }: UserPageInfoProps) => {
             asChild
             className="w-full mt-3 rounded-full"
           >
-            <Link href="/studio">Go to studio</Link>
+            <Link prefetch href="/studio">
+              Go to studio
+            </Link>
           </Button>
         ) : (
           <SubscriptionButton
@@ -110,7 +112,9 @@ export const UserPageInfo = ({ user }: UserPageInfoProps) => {
           </div>
           {userId === user.clerkId ? (
             <Button variant="secondary" asChild className="mt-3 rounded-full">
-              <Link href="/studio">Go to studio</Link>
+              <Link prefetch href="/studio">
+                Go to studio
+              </Link>
             </Button>
           ) : (
             <SubscriptionButton
