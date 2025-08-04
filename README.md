@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 Clip Tube
 
-## Getting Started
+A full-featured YouTube clone built with the latest web tech. Users can upload videos, engage with content through likes, comments, and playlists, and navigate a sleek, responsive interface. Powered by **Next.js App Router**, **TRPC**, **Drizzle ORM**, **Mux**, and more.
 
-First, run the development server:
+---
+
+## 🚀 Live Demo
+
+🔗 [Visit Clip Tube](https://clip-tube.vercel.app)
+
+![Screenshot](./public/banner.png)
+
+---
+
+## ⚙️ Tech Stack
+
+- **Frontend**: Next.js (App Router), TypeScript, Tailwind CSS, ShadCN UI
+- **Backend**: TRPC, Drizzle ORM, UploadThing, Redis
+- **Database**: PostgreSQL via Drizzle ORM
+- **Video Hosting**: Mux
+- **Authentication**: Clerk
+- **Deployment**: Vercel
+
+---
+
+## 🔑 Features
+
+- 🔐 User auth (OAuth & JWT via Clerk)
+- 📤 Upload and stream videos via Mux
+- 📺 Mux video player with views tracking
+- 📝 Comments, replies, and reactions
+- ❤️ Like/dislike functionality for videos and comments
+- 📁 Playlist creation and management
+- 📊 Trending and subscribed feeds
+- 🔎 Video and user search
+- 🧠 TRPC-powered type-safe backend
+- 💡 Fully responsive layout
+
+---
+
+## 📁 Folder Structure Overview
+
+├─ app/ # Route handlers (App Router)
+├─ modules/ # App features with respective tRPC procedures (videos, comments, playlists, etc.)
+├─ components/ # Reusable UI (ShadCN + a couple custom-made)
+├─ db/ # Drizzle schema & DB init
+├─ lib/ # Mux, Redis, Upload helpers
+├─ trpc/ # Routers and API logic
+├─ hooks/ # Custom React hooks
+├─ scripts/ # Seeders (e.g., categories)
+
+---
+
+## 🧰 Getting Started
+
+Clone the repo:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+git clone https://github.com/wikkiboi/cliptube.git
+cd cliptube
+bun install
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create .env.local and add the following:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_WEBHOOK_SIGNING_SECRET=
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+DATABASE_URL=
 
-## Learn More
+UPSTASH_REDIS_REST_URL=
+UPSTASH_REDIS_REST_TOKEN=
 
-To learn more about Next.js, take a look at the following resources:
+MUX_TOKEN_ID=
+MUX_TOKEN_SECRET=
+MUX_WEBHOOK_SECRET=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+UPLOADTHING_TOKEN=
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Run the app locally:
 
-## Deploy on Vercel
+```bash
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+bun run dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```

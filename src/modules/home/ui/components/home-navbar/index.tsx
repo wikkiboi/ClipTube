@@ -14,7 +14,7 @@ export const HomeNavbar = () => {
           <Link prefetch href="/" className="hidden md:block">
             <div className="p-4 flex items-center gap-1">
               <Image src="/logo.svg" height={32} width={32} alt="Logo" />
-              <p className="text-xl font-semibold tracking-tight">NewTube</p>
+              <p className="text-xl font-semibold tracking-tight">ClipTube</p>
             </div>
           </Link>
         </div>
