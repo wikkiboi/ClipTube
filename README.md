@@ -26,10 +26,9 @@ A full-featured video-sharing platform. Users can upload videos, engage with con
 -  TRPC-powered type-safe backend
 -  Fully responsive layout
 
----
-
 ##  Folder Structure Overview
 
+```
 ├─ app/ # Route handlers (App Router)
 ├─ modules/ # App features with respective tRPC procedures (videos, comments, playlists, etc.)
 ├─ components/ # Reusable UI (ShadCN + a couple custom-made)
@@ -38,8 +37,7 @@ A full-featured video-sharing platform. Users can upload videos, engage with con
 ├─ trpc/ # Routers and API logic
 ├─ hooks/ # Custom React hooks
 ├─ scripts/ # Seeders (e.g., categories)
-
----
+```
 
 ##  Getting Started
 
