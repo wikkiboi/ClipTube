@@ -3,7 +3,6 @@
 A full-featured video-sharing platform. Users can upload videos, engage with content through likes, comments, and playlists, and navigate a sleek, responsive interface. Powered by **Next.js App Router**, **TRPC**, **Drizzle ORM**, **Mux**, and more.
 
 ![Screenshot](./public/banner.png)
----
 
 ## Tech Stack
 
@@ -13,8 +12,6 @@ A full-featured video-sharing platform. Users can upload videos, engage with con
 - **Video Hosting**: Mux
 - **Authentication**: Clerk
 - **Deployment**: Vercel
-
----
 
 ## Features
 
@@ -59,19 +56,18 @@ bun install
 Create .env.local and add the following:
 
 ```env
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-CLERK_WEBHOOK_SIGNING_SECRET=
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+CLERK_WEBHOOK_SIGNING_SECRET
+DATABASE_URL
 
-DATABASE_URL=
+UPSTASH_REDIS_REST_URL
+UPSTASH_REDIS_REST_TOKEN
 
-UPSTASH_REDIS_REST_URL=
-UPSTASH_REDIS_REST_TOKEN=
+MUX_TOKEN_ID
+MUX_TOKEN_SECRET
+MUX_WEBHOOK_SECRET
 
-MUX_TOKEN_ID=
-MUX_TOKEN_SECRET=
-MUX_WEBHOOK_SECRET=
-
-UPLOADTHING_TOKEN=
+UPLOADTHING_TOKEN
 ```
 
 Run the app locally:
