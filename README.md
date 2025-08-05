@@ -1,18 +1,11 @@
-# 🎬 Clip Tube
+# Clip Tube
 
-A full-featured YouTube clone built with the latest web tech. Users can upload videos, engage with content through likes, comments, and playlists, and navigate a sleek, responsive interface. Powered by **Next.js App Router**, **TRPC**, **Drizzle ORM**, **Mux**, and more.
-
----
-
-## 🚀 Live Demo
-
-🔗 [Visit Clip Tube](https://clip-tube.vercel.app)
+A full-featured video-sharing platform. Users can upload videos, engage with content through likes, comments, and playlists, and navigate a sleek, responsive interface. Powered by **Next.js App Router**, **TRPC**, **Drizzle ORM**, **Mux**, and more.
 
 ![Screenshot](./public/banner.png)
-
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 - **Frontend**: Next.js (App Router), TypeScript, Tailwind CSS, ShadCN UI
 - **Backend**: TRPC, Drizzle ORM, UploadThing, Redis
@@ -23,22 +16,22 @@ A full-featured YouTube clone built with the latest web tech. Users can upload v
 
 ---
 
-## 🔑 Features
+## Features
 
-- 🔐 User auth (OAuth & JWT via Clerk)
-- 📤 Upload and stream videos via Mux
-- 📺 Mux video player with views tracking
-- 📝 Comments, replies, and reactions
-- ❤️ Like/dislike functionality for videos and comments
-- 📁 Playlist creation and management
-- 📊 Trending and subscribed feeds
-- 🔎 Video and user search
-- 🧠 TRPC-powered type-safe backend
-- 💡 Fully responsive layout
+-  User auth (OAuth & JWT via Clerk)
+-  Upload and stream videos via Mux
+-  Mux video player with views tracking
+-  Comments, replies, and reactions
+-  Like/dislike functionality for videos and comments
+-  Playlist creation and management
+-  Trending and subscribed feeds
+-  Video and user search
+-  TRPC-powered type-safe backend
+-  Fully responsive layout
 
 ---
 
-## 📁 Folder Structure Overview
+##  Folder Structure Overview
 
 ├─ app/ # Route handlers (App Router)
 ├─ modules/ # App features with respective tRPC procedures (videos, comments, playlists, etc.)
@@ -51,7 +44,7 @@ A full-featured YouTube clone built with the latest web tech. Users can upload v
 
 ---
 
-## 🧰 Getting Started
+##  Getting Started
 
 Clone the repo:
 
