@@ -8,7 +8,7 @@ A full-featured video-sharing platform. Users can upload videos, engage with con
 
 - **Frontend**: Next.js (App Router), TypeScript, Tailwind CSS, ShadCN UI
 - **Backend**: TRPC, Drizzle ORM, UploadThing, Redis
-- **Database**: PostgreSQL via Drizzle ORM
+- **Database**: PostgreSQL via Drizzle ORM, Neon
 - **Video Hosting**: Mux
 - **Authentication**: Clerk
 - **Deployment**: Vercel
@@ -38,7 +38,39 @@ A full-featured video-sharing platform. Users can upload videos, engage with con
 ├─ hooks/ # Custom React hooks
 ├─ scripts/ # Seeders (e.g., categories)
 ```
+## tRPC Routers & Procedures
 
+| Router               | Queries                                                                       | Mutations                                            |
+| -------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------- |
+| **categories**       | `getMany`                                                                     | –                                                    |
+| **comments**         | `getMany`                                                                     | `create`, `remove`                                   |
+| **commentReactions** | –                                                                             | `like`, `dislike`                                    |
+| **playlists**        | `getOne`, `getVideos`, `getMany`, `getManyForVideo`, `getLiked`, `getHistory` | `create`, `remove`, `addVideo`, `removeVideo`        |
+| **search**           | `getMany`                                                                     | –                                                    |
+| **studio**           | `getOne`, `getMany`                                                           | –                                                    |
+| **subscriptions**    | `getMany`                                                                     | `create`, `remove`                                   |
+| **suggestions**      | `getMany`                                                                     | –                                                    |
+| **users**            | `getOne`                                                                      | –                                                    |
+| **videos**           | `getOne`, `getMany`, `getManyTrending`, `getManySubscribed`                   | `revalidate`, `restoreThumbnail`, `remove`, `update` |
+| **videoViews**       | –                                                                             | `create`                                             |
+| **videoReactions**   | –                                                                             | `like`, `dislike`                                    |
+
+### Usage Example 
+
+``` ts
+
+import { trpc } from "@/trpc/server"
+
+// Query: Fetch playlist by ID
+const [playlist] = trpc.playlists.getOne.useSuspenseQuery({
+  id: "abc123",
+});
+
+// Mutation: Remove a playlist by ID
+const remove = trpc.playlists.remove.useMutation();
+remove.mutate({ id: "abc123" });
+
+```
 ##  Getting Started
 
 Clone the repo:
